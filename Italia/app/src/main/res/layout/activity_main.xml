@@ -9,21 +9,24 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
         android:text=""
         android:background="#00FF00"
         android:id="@+id/vert" />
 
     <TextView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
         android:text=""
         android:id="@+id/blanc" />
 
     <TextView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
         android:text=""
         android:id="@+id/rouge"
         android:background="#FD0202" />
