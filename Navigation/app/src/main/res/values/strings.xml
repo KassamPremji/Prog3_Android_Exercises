@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Accueil</string>
+
+    <string name="accueil_btn_article">ARTICLE</string>
+    <string name="accueil_btn_contact">CONTACT</string>
+    <string name="article_btn_contact">CONTACT</string>
+    <string name="contact_btn_accueil">ACCUEIL</string>
+</resources>
