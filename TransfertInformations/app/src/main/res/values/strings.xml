@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Accueil</string>
+
+    <string name="textMain">Bonjour X</string>
+    <string name="main_btn_article">ARTICLE</string>
+    <string name="main_btn_contact">CONTACT</string>
+</resources>
