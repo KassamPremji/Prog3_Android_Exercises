@@ -1,0 +1,44 @@
+package com.example.transfertinformationse;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+
+import com.example.transfertinformationse.databinding.ActivityMainBinding;
+
+public class MainActivity extends AppCompatActivity
+{
+    private ActivityMainBinding binding;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
+        binding.numberPicker.setMinValue(0);
+        binding.numberPicker.setMaxValue(10);
+
+        binding.mainBtnArticle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, Article.class);
+                startActivity(i);
+
+                i.putExtra("nombre", binding.numberPicker.getValue());
+            }
+        });
+
+        binding.mainBtnContact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, Contact.class);
+                startActivity(i);
+
+            }
+        });
+    }
+}

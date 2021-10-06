@@ -3,15 +3,16 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
     viewBinding {
         enabled = true
     }
 
     defaultConfig {
-        applicationId "premji.org.transfertinformations"
-        minSdk 19
-        targetSdk 31
+        applicationId "com.example.transfertinformationse"
+        minSdkVersion 19
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
