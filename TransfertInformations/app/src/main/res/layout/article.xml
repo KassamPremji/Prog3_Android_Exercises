@@ -12,8 +12,27 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:text="@tools:sample/lorem"/>
+            android:text="@string/lorem"
+            android:textSize="40sp"/>
+
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/article_btn_contact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/article_btn_contact"
+            android:textColor="@color/black"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="10sp"
+            android:layout_marginLeft="120sp"
+            android:layout_marginRight="120sp"
+            android:backgroundTint="#BABABA"
+            android:textSize="20sp"/>
+    </LinearLayout>
 </LinearLayout>

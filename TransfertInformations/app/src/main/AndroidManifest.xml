@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TransfertInformations">
         <activity
+            android:name=".Contact"
+            android:exported="true" />
+        <activity
+            android:name=".Article"
+            android:exported="true"/>
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -17,10 +23,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".Article"
-            android:exported="true">
         </activity>
     </application>
 

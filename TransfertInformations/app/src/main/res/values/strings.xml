@@ -4,4 +4,8 @@
     <string name="textMain">Bonjour X</string>
     <string name="main_btn_article">ARTICLE</string>
     <string name="main_btn_contact">CONTACT</string>
+    <string name="article_btn_contact">CONTACT</string>
+    <string name="nom">Nom</string>
+    <string name="contact_btn_accueil">ACCUEIL</string>
+    <string name="lorem">Lorem ipsum ipsun Lorem ipsum ipsunLorem ipsum ipsun Lorem ipsum ipsun Lorem ipsum ipsunLorem ipsum ipsun</string>
 </resources>
