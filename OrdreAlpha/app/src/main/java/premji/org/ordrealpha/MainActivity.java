@@ -6,17 +6,23 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import premji.org.ordrealpha.databinding.ActivityMainBinding;
+
 public class MainActivity extends AppCompatActivity {
 
     PersonneAdapter adapter;
+    ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         this.initRecycler();
         this.remplirRecycler();
+
+
     }
 
     private void remplirRecycler() {
