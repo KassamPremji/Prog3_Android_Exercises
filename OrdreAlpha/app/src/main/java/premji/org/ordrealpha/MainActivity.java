@@ -5,6 +5,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.Toast;
+
+import java.util.Collections;
 
 import premji.org.ordrealpha.databinding.ActivityMainBinding;
 
@@ -21,8 +24,6 @@ public class MainActivity extends AppCompatActivity {
 
         this.initRecycler();
         this.remplirRecycler();
-
-
     }
 
     private void remplirRecycler() {
@@ -37,8 +38,6 @@ public class MainActivity extends AppCompatActivity {
         Personne personne3 = new Personne();
         personne3.nom = "Paul";
         adapter.list.add(personne3);
-
-        adapter.notifyDataSetChanged();
 
         Personne personne4 = new Personne();
         personne4.nom = "John";

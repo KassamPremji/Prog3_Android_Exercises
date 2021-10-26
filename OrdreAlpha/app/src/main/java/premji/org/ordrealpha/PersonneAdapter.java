@@ -1,10 +1,13 @@
 package premji.org.ordrealpha;
 
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -50,22 +53,25 @@ public class PersonneAdapter extends RecyclerView.Adapter<PersonneAdapter.MyView
     public void onBindViewHolder(MyViewHolder holder, int position) {
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
+
         Personne personneCourante = list.get(position);
         holder.tvNom.setText(personneCourante.nom);
 
+
         holder.btnDown.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                if (position == list.size() -1)
+            public void onClick(View v)
+            {
+                if (position == getItemCount() - 1)
                 {
                     Collections.swap(list, position, 0);
-                    notifyItemMoved(position, 0);
+                    notifyDataSetChanged();
                 }
-                else {
-                        Collections.swap(list, position, position + 1);
-                    notifyItemMoved(position, position + 1);
+                else
+                {
+                    Collections.swap(list, position, position + 1);
+                    notifyDataSetChanged();
                 }
-
             }
         });
 
@@ -74,16 +80,40 @@ public class PersonneAdapter extends RecyclerView.Adapter<PersonneAdapter.MyView
             public void onClick(View v) {
                 if (position == 0)
                 {
-                    Collections.swap(list, position, list.size() -1);
-                    notifyItemMoved(position, list.size() - 1);
+                    Collections.swap(list, position, getItemCount() -1);
+                    notifyDataSetChanged();
                 }
                 else
-                    {
-                        Collections.swap(list, position, position - 1);
-                        notifyItemMoved(position, position - 1);
-                    }
+                {
+                    Collections.swap(list, position, position - 1);
+                    notifyDataSetChanged();
+                }
             }
         });
+
+        List<String> listOrdre = new ArrayList<>();
+        for (Personne personne : list)
+        {
+            listOrdre.add(personne.nom);
+        }
+        Collections.sort(listOrdre);
+
+        int compteur = 0;
+        int index = 0;
+        for (Personne personne : list)
+        {
+            if (personne.nom.equals(listOrdre.get(index)))
+            {
+                compteur++;
+            }
+            index++;
+        }
+
+        if (compteur == getItemCount())
+        {
+            Collections.shuffle(list);
+            Log.e("Bravo", "Bravo");
+        }
     }
 
     // renvoie la taille de la liste
