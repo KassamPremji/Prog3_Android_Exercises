@@ -4,6 +4,8 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import org.premji.persist.Sexe;
+
 import java.util.Date;
 
 @Entity
@@ -19,9 +21,5 @@ public class PersistPersonne
     public Date dateNaissance;
 
     @ColumnInfo
-    public enum sexe {
-        Homme,
-        Femme,
-        Complexe
-    }
+    public Enum<Sexe> sexeEnum;
 }
