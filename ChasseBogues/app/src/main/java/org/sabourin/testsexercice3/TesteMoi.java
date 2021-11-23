@@ -10,21 +10,23 @@ import java.util.List;
 public class TesteMoi {
 
     // TODO 1 : Cette fonction brise un principe clé des tests unitaires. Quel est-il?
+    // Il faut des return.
     // TODO 2 : Modifier le code pour que cette méthode soit facilement testable
     // TODO 3 : Écrire 3 tests et valider si le code est bon
-    public void comparerDix(int number){
-        if (number > 10){
-            System.out.println("notre " + number + "est plus petit que 10");
+    public String comparerDix(int number){
+        if (number < 10){
+            return ("notre " + number + "est plus petit que 10");
         } else if (number == 10){
-            System.out.println("notre " + number + "est égal à 10");
+            return ("notre " + number + "est égal à 10");
         } else {
-            System.out.println("notre " + number + "est plus grand que 10");
+            return ("notre " + number + "est plus grand que 10");
         }
     }
 
 
     // TODO 4 : Écrire les tests et valider si le code est bon
     //          Décrire le ou les problèmes
+    // La méthode ne fonctionne pas pour GvsR, PvsG, RvsP
     // Indice : Essayez toutes les combinaisons, et également les choix non gérés
     public String rochePapierGnocchi(String choixA, String choixB){
         if (choixA == choixB){
