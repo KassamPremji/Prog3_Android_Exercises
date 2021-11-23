@@ -23,6 +23,37 @@ public class ServiceImplementation{
 
     public void ajouterPersonne(Personne personne) {
         // Ajout
-        personne.idPersonne = maBD.monDao().insertPersonne(personne);
+        maBD.monDao().insertPersonne(personne);
+    }
+
+    public boolean isValidZipCode(String zippy)
+    {
+        int nombreEspace = 0;
+        int nombreDeNombre = 0;
+        String[] partieEspace = zippy.split(" ");
+        String[] partieTrait = zippy.split("-");
+        String test = zippy.replaceAll("[0-9]", "!");
+
+        for (char c : zippy.toCharArray())
+        {
+            if (c == ' ')
+            {
+                nombreEspace++;
+            }
+        }
+
+        for (char c : test.toCharArray())
+        {
+            if (c == '!')
+            {
+                nombreDeNombre++;
+            }
+        }
+
+        if (nombreEspace > 2 || (partieEspace.length == 1 && zippy.length() != 6) || nombreDeNombre != 3)
+        {
+            return false;
+        }
+        return true;
     }
 }

@@ -6,6 +6,7 @@ import androidx.room.Room;
 import androidx.test.core.app.ApplicationProvider;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -32,7 +33,6 @@ public class TestsApplication {
         service = ServiceImplementation.getInstance(bd);
     }
 
-
     @Test
     public void ajoutPersonneOKBD(){
         Personne personne = new Personne();
@@ -42,7 +42,6 @@ public class TestsApplication {
         personne.adressePersonne = "1234 De la Mortagne MTL CA";
         bd.monDao().insertPersonne(personne);
     }
-
 
     @Test
     public void ajoutPersonneKOService() {
@@ -54,5 +53,44 @@ public class TestsApplication {
         service.ajouterPersonne(personne);
     }
 
+    @Test
+    public void CodePostaleMajusculeValidOKService()
+    {
+        boolean resultat = service.isValidZipCode("H1Y1E1");
+        assertTrue(resultat);
+    }
+    @Test
+    public void CodePostaleEspaceValidOKService()
+    {
+        boolean resultat = service.isValidZipCode("H1Y 1E1");
+        assertTrue(resultat);
+    }
 
+    @Test
+    public void CodePostaleMinusculeValidOKService()
+    {
+        boolean resultat = service.isValidZipCode("h3Y 1E8");
+        assertTrue(resultat);
+    }
+
+    @Test
+    public void CodePostale3EspacesValidKOService()
+    {
+        boolean resultat = service.isValidZipCode("H1Y   1E1");
+        assertFalse(resultat);
+    }
+
+    @Test
+    public void CodePostaleANormaleValidKOService()
+    {
+        boolean resultat = service.isValidZipCode("h3Y 1TO");
+        assertFalse(resultat);
+    }
+
+    @Test
+    public void CodePostale_ValidKOService()
+    {
+        boolean resultat = service.isValidZipCode("H1Y_1E1");
+        assertFalse(resultat);
+    }
 }
