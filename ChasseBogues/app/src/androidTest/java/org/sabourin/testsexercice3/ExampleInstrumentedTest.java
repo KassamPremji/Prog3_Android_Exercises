@@ -16,7 +16,8 @@ import static org.junit.Assert.*;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 @RunWith(AndroidJUnit4.class)
-public class ExampleInstrumentedTest {
+public class ExampleInstrumentedTest
+{
     @Test
     public void useAppContext() {
         // Context of the app under test.
@@ -155,6 +156,47 @@ public class ExampleInstrumentedTest {
         assertEquals(Actual , Attendu);
     }
 
+    @Test
+    public void calculateVideOK()
+    {
+        TesteMoi testeMoi = new TesteMoi();
 
+        int Acutal = testeMoi.calculate("");
+        int Attendu = 0;
 
+        assertEquals(Attendu,Acutal);
+    }
+
+    @Test
+    public void calculateEspaceSeulementOK()
+    {
+        TesteMoi testeMoi = new TesteMoi();
+
+        int Acutal = testeMoi.calculate("  ");
+        int Attendu = 0;
+
+        assertEquals(Attendu,Acutal);
+    }
+
+    @Test
+    public void calculateUnChiffreOK()
+    {
+        TesteMoi testeMoi = new TesteMoi();
+
+        int Acutal = testeMoi.calculate("2");
+        int Attendu = 2;
+
+        assertEquals(Attendu,Acutal);
+    }
+
+    @Test
+    public void calculatePlusieursChiffresOK()
+    {
+        TesteMoi testeMoi = new TesteMoi();
+
+        int Acutal = testeMoi.calculate("12");
+        int Attendu = 3;
+
+        assertEquals(Attendu,Acutal);
+    }
 }
