@@ -15,5 +15,16 @@ public class ExampleInstrumentedTest {
         assertTrue(true);
     }
 
+    @Test
+    public void ajoutUneEvalutation()
+    {
+        Evaluation evaluation = new Evaluation("Kanye",1, 2);
+    }
+
+    @Test
+    public void evaluationExceptionNomPasUnique()
+    {
+        Evaluation evaluation = new Evaluation("Kanye",1, 2);
+    }
 
 }
