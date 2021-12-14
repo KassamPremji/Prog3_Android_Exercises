@@ -2,6 +2,7 @@ package premji.org.exercice1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -19,6 +20,16 @@ public class MainActivity2 extends AppCompatActivity
         binding = ActivityMain2Binding.inflate(getLayoutInflater());
         View view = binding.getRoot();
 
+        setTitle("Interface Premji");
         setContentView(view);
+
+        binding.boutonRetour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity2.this, MainActivity.class);
+                startActivity(i);
+            }
+        });
+
     }
 }
