@@ -1,4 +1,4 @@
-package com.premji.bd.premji;
+package premji.org.exercice3;
 
 import org.junit.Test;
 

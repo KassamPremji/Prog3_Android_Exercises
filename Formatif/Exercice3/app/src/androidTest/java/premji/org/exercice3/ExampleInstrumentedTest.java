@@ -1,4 +1,4 @@
-package com.premji.bd.premji;
+package premji.org.exercice3;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.premji.bd.premji", appContext.getPackageName());
+        assertEquals("premji.org.exercice3", appContext.getPackageName());
     }
 }
