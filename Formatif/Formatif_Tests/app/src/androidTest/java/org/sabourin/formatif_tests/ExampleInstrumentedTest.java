@@ -10,21 +10,50 @@ public class ExampleInstrumentedTest {
 
     /* -------------- ÉCRIRE VOS TESTS ICI -------------*/
 
+
+    public ServiceImplementation service;
+
     @Test
     public void exemple(){
         assertTrue(true);
     }
 
     @Test
-    public void ajoutUneEvalutation()
+    public void ajoutEvalutationOKService()
     {
-        Evaluation evaluation = new Evaluation("Kanye",1, 2);
+        try
+        {
+            Evaluation evaluation = new Evaluation("Kanye",1, 2);
+            service.ajouterEvaluation(evaluation);
+        }
+        catch (EvaluationException e)
+        {
+
+        }
     }
 
     @Test
     public void evaluationExceptionNomPasUnique()
     {
-        Evaluation evaluation = new Evaluation("Kanye",1, 2);
+        try
+        {
+            Evaluation evaluation1 = new Evaluation("oui",10, 22);
+            service.ajouterEvaluation(evaluation1);
+        }
+        catch (EvaluationException e)
+        {
+
+        }
+
+        try
+        {
+            Evaluation evaluation2 = new Evaluation("oui",11, 21);
+            service.ajouterEvaluation(evaluation2);
+        }
+        catch (EvaluationException e)
+        {
+
+        }
     }
 
 }
